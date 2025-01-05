@@ -1,110 +1,65 @@
-@use './functions' as *;
-// ---------------------
-//   --- Variables ---
-// ---------------------
+@use "./functions" as foo;
+
+// --- Variables ---
 
 $debug: false;
 
-// --- color pallete ---
-$clr10: #ffffff;
-$clr11: #151619;
-$clr12: #1d1f22;
-$clr13: #2b2d31;
-$clr14: #35393f;
-
+// --- color pallet ---
+$clr10: #fff;
+$clr11: hsl(148deg 38% 91%);
+$clr12: hsl(169deg 82% 27%);
+$clr13: hsl(0deg 66% 54%);
+$clr14: hsl(186deg 15% 59%);
+$clr15: hsl(187deg 24% 22%);
+$clr16: dodgerblue;
 $clr99: #505050;
+
 // -----------------------
 
 // font color
-// text H1
-$clr__header--H1: $clr10;
-$clr__header--H5: $clr10;
+$clr-h1: $clr10;
+
 // -------------------------
 
-// backround color
-$clr__body--dark: $clr12;
-
-$clr__separation__bg--light: $clr10;
-$clr__separation__bg--dark: $clr12;
-
+// background color
+$clr-body: $clr14;
 $clr-bg-img: $clr99;
-// -------------------------
 
-$backroundGradient: (98.96% 98.96% at 50% 0%, #232a34 0%, #181e27 100%);
-// --------------------------------
-
-// --- fonts ---
-$font-family-Roboto__Slab: 'Roboto Slab', serif;
-$font-family-Roboto: Roboto, serif;
-$font-family-Commissioner: Commissioner, sans-serif;
-
-$font-family-SourceSans: 'Source Sans 3', sans-serif;
-$font-family-Outfit: Outfit, sans-serif;
-$font-family-Figtree: Figtree, sans-serif;
-$font-family-Inter: Inter, sans-serif;
-$font-family-YoungSerif: 'Young Serif', serif;
-$font-family-Montserrat: Montserrat, serif;
-$font-family-Fraunces: Fraunces, serif;
-$font-family-Poppins: Poppins, sans-serif;
-$font-family-Rubik: Rubik, sans-serif;
-$font-family-WorkSans: 'Work Sans', sans-serif;
-$font-family-RedHatDisplay: 'Red hat display', sans-serif;
-$font-family-Barlow-semiCon: 'Barlow_semi_condensed', sans-serif;
-
-$font-family-serif: Georgia, Times, 'Times New Roman', serif;
-$font-family-systemUI: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-// -------------------------------
-
-// --- border-radius ---
-$br-card: 8;
-$br-phone__wrapper: 20;
-$br-btn: 29;
-// ----------------------
-
-// border color
-$clr-br: $clr13;
-$clr-br-list: $clr13;
-// ----------------------
-
-
-// transition
-$tr-time: 0.2s;
-//----------------------
+// --- width ---
+$max-width: 1440px;
+$min-width: 375px;
 
 // --- break points ---
-$bp-Max: 900px;
-$bp-Mid: 650px;
-$bp-Min: 650px;
-$bp-Mni: 250px;
-// -------------------------------
+$bp-max: $max-width;
+$bp-mid: 650px;
+$bp-min: 650px;
+$bp-mni: $min-width;
+
 // --- font-global ---
+$font-karla: Karla;
 $font-size-110: 110%;
 $font-size-100: 100%;
 $font-size-90: 90%;
 $font-size-80: 80%;
-// --------------------------------
-/
-$cont__padding__inln: 16;
-$cont__padding__block: 16;
-// --------------------------------
+
+// --- font-local ---
+$font-size-input: foo.rem(18);
+$font-size-p: foo.rem(18);
 
 $pages: home, gallery, blog, contact, buttons;
 
 // icon colors
-$cards__color: (
-    'clifford': $clr11,
-    'walters': $clr12,
-    'harmon': $clr10,
-    'abrams': $clr13,
-    'whittle': $clr10,
+$cards-color: (
+  "clifford": $clr11,
+  "walters": $clr12,
+  "harmon": $clr10,
+  "abrams": $clr13,
+  "whittle": $clr10,
 );
-
-$btns__color: (
-    'GetStarted': $clr11,
-    'ContinueReading': $clr12,
-    'FindOutMore': $clr12,
-    'LearnMoreMain': $clr11,
-    'comments': $clr11,
+$buttons-color: (
+  "GetStarted": $clr11,
+  "ContinueReading": $clr12,
+  "FindOutMore": $clr12,
+  "LearnMoreMain": $clr11,
+  "comments": $clr11,
 );
-//--------------------------------
