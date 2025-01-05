@@ -1,46 +1,69 @@
-@use './variables' as *;
+@use "./variables" as *;
+@use "./functions" as foo;
 
-// ------------------------
-//   --- placeholders ---
-// ------------------------
+/* --- placeholders --- */
 
-%autoMargin {
-    margin-inline: auto;
+%auto-margin {
+  margin-inline: auto;
 }
 
 // --- font weights ---
-
 %weight-200 {
-    font-weight: 200;
+  font-weight: 200;
 }
+
 %weight-300 {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 %weight-400 {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 %weight-500 {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 %weight-600 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 %weight-700 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 %weight-800 {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 %weight-900 {
-    font-weight: 900;
+  font-weight: 900;
 }
 
 %text-center {
-    text-align: center;
+  text-align: center;
 }
+
+// --- flex ---
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%width-full {
+  width: 100%;
+}
+
+%mb-16 {
+  margin-bottom: foo.em(16, 16);
+}
+
+%cursor-pointer {
+  cursor: pointer;
+}
+
+%border-7{
+  border-radius: 7px;
+}
+
