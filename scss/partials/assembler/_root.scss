@@ -1,0 +1,10 @@
+@use '../tools' as *;
+
+/* --- root css --- */
+
+:root {
+  --font-size: #{$font-size-100};
+  --container: 1440px;
+}
+
+

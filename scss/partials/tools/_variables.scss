@@ -1,0 +1,65 @@
+@use "./functions" as foo;
+
+// --- Variables ---
+
+$debug: false;
+
+// --- color pallet ---
+$clr10: #fff;
+$clr11: hsl(148deg 38% 91%);
+$clr12: hsl(169deg 82% 27%);
+$clr13: hsl(0deg 66% 54%);
+$clr14: hsl(186deg 15% 59%);
+$clr15: hsl(187deg 24% 22%);
+$clr16: dodgerblue;
+$clr99: #505050;
+
+// -----------------------
+
+// font color
+$clr-h1: $clr10;
+
+// -------------------------
+
+// background color
+$clr-body: $clr14;
+$clr-bg-img: $clr99;
+
+// --- width ---
+$max-width: 1440px;
+$min-width: 375px;
+
+// --- break points ---
+$bp-max: $max-width;
+$bp-mid: 650px;
+$bp-min: 650px;
+$bp-mni: $min-width;
+
+// --- font-global ---
+$font-karla: Karla;
+$font-size-110: 110%;
+$font-size-100: 100%;
+$font-size-90: 90%;
+$font-size-80: 80%;
+
+// --- font-local ---
+$font-size-input: foo.rem(18);
+$font-size-p: foo.rem(18);
+
+$pages: home, gallery, blog, contact, buttons;
+
+// icon colors
+$cards-color: (
+  "clifford": $clr11,
+  "walters": $clr12,
+  "harmon": $clr10,
+  "abrams": $clr13,
+  "whittle": $clr10,
+);
+$buttons-color: (
+  "GetStarted": $clr11,
+  "ContinueReading": $clr12,
+  "FindOutMore": $clr12,
+  "LearnMoreMain": $clr11,
+  "comments": $clr11,
+);
