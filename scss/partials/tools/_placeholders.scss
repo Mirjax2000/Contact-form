@@ -1,108 +1,46 @@
-@use "./variables" as *;
-@use "./functions" as foo;
-@use "./mixins" as mix;
+@use './variables' as *;
 
-/* --- placeholders --- */
+// ------------------------
+//   --- placeholders ---
+// ------------------------
 
-%auto-margin {
-  margin-inline: auto;
+%autoMargin {
+    margin-inline: auto;
 }
 
 // --- font weights ---
-%weight-200 {
-  font-weight: 200;
-}
 
+%weight-200 {
+    font-weight: 200;
+}
 %weight-300 {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 %weight-400 {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 %weight-500 {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 %weight-600 {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 %weight-700 {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 %weight-800 {
-  font-weight: 800;
+    font-weight: 800;
 }
 
 %weight-900 {
-  font-weight: 900;
+    font-weight: 900;
 }
 
 %text-center {
-  text-align: center;
-}
-
-// --- flex ---
-%flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-%width-full {
-  width: 100%;
-}
-
-%mb-min {
-  margin-bottom: foo.em(9, 18);
-}
-
-%mb-mid {
-  margin-bottom: foo.em(18, 18);
-}
-
-%cursor-pointer {
-  cursor: pointer;
-}
-
-%border-7 {
-  border-radius: 7px;
-}
-
-%border-1px {
-  border: 1px solid $clr14;
-}
-
-%no-selection {
-  user-select: none;
-}
-
-%flex-start {
-  @include mix.flex(flex-start);
-}
-
-%checkbox-label {
-  margin-left: foo.em(18, 22);
-  cursor: pointer;
-}
-
-%font-size-input {
-  font-size: $font-size-input;
-}
-
-%border-none {
-  border: none;
-}
-
-%flex-1 {
-  flex: 1;
-}
-
-%bck-img {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+    text-align: center;
 }
