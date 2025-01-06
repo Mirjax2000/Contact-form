@@ -1,19 +1,294 @@
-/* Error: expected "{".
- *    ,
- * 88 | $cont__padding__inln: 16;
- *    |                         ^
- *    '
- *   ..\partials\tools\_variables.scss 88:25  @forward
- *   ..\partials\tools\_index.scss 5:1        @use
- *   home.scss 1:1                            root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a    \2577 \a 88 \2502  $cont__padding__inln: 16;\a    \2502                          ^\a    \2575 \a   ..\\partials\\tools\\_variables.scss 88:25  @forward\a   ..\\partials\\tools\\_index.scss 5:1        @use\a   home.scss 1:1                            root stylesheet';
+/* --- root css --- */
+:root {
+  --font-size: 100%;
+  --container: 1440px;
 }
+
+/* --- normalize css --- */
+html {
+  tab-size: 4;
+  text-size-adjust: 100%;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+  font-size: var(--font-size);
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  background-color: gray;
+}
+
+hr {
+  height: 0;
+  color: inherit;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+  text-indent: 0;
+  border-color: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  appearance: button;
+}
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+legend {
+  padding: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  appearance: textfield;
+  outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+  appearance: none;
+}
+
+::-webkit-file-upload-button {
+  appearance: button;
+  font: inherit;
+}
+
+summary {
+  display: list-item;
+}
+
+/*  --- reset css --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+nav,
+body,
+form,
+aside,
+input,
+header,
+section,
+article {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+/* --- typography --- */
+@font-face {
+  font-family: Karla;
+  src: url("../assets/webfonts/Font-face/static/Karla-Regular.woff2") format("woff2"), url("../assets/webfonts/Font-face/static/Karla-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Karla;
+  src: url("../assets/webfonts/Font-face/static/Karla-Bold.woff2") format("woff2"), url("../assets/webfonts/Font-face/static/Karla-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* --- general settings --- */
+/* --- placeholders --- */
+.container {
+  margin-inline: auto;
+}
+
+.form__text {
+  font-weight: 400;
+}
+
+.form__section--header h1, .form__submit {
+  font-weight: 700;
+}
+
+.form__email-input, .form__message-textarea, .form__submit {
+  width: 100%;
+}
+
+.form p, .form__name > .form__text, .form__email-input, .form__message-textarea {
+  margin-bottom: 1em;
+}
+
+.form__name > .form__text, .form__email-input, .form__message-textarea {
+  cursor: pointer;
+}
+
+.form__section, .form__text, .form__submit {
+  border-radius: 7px;
+}
+
+/* --- header --- */
+/* --- home main --- */
+.home {
+  background-color: hsl(186, 15%, 59%);
+  font-family: Karla;
+  color: hsl(187, 24%, 22%);
+}
+
+.hide {
+  clip-path: inset(50%);
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  left: -9999px;
+  white-space: nowrap;
+}
+
+.container {
+  width: clamp(375px, 100%, 1440px);
+  padding: 1em;
+}
+
+span {
+  color: dodgerblue;
+}
+
+.form__section {
+  padding: 2em;
+  background-color: #fff;
+}
+.form__section--header h1 {
+  font-size: 2rem;
+  letter-spacing: -1px;
+}
+
+.form {
+  margin-top: 2em;
+}
+.form__text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  letter-spacing: 0;
+  padding: 0.4444444444em 1em;
+  border: 1px solid hsl(186, 15%, 59%);
+}
+.form p {
+  font-size: 1.125rem;
+}
+.form__name {
+  display: flex;
+  flex-direction: column;
+}
+.form__submit {
+  background-color: hsl(169, 82%, 27%);
+  border: none;
+  color: #fff;
+  font-size: 1.125rem;
+  padding-block: 0.8888888889em;
+}
+
+/* --- footer --- */
+/* --- media queries --- */
+
+/*# sourceMappingURL=home.css.map */
