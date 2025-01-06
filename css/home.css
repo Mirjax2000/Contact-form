@@ -215,22 +215,26 @@ input {
   width: 100%;
 }
 
-.form p, .form__name > .form__text, .form__email-input, .form__message-textarea {
+.form p, .form__name > .form__text, .form__email-input, .form__checkbox-group, .form__message-textarea {
   margin-bottom: 1em;
 }
 
-.form__name > .form__text, .form__email-input, .form__message-textarea {
+.form__name > .form__text, .form__email-input, .form__message-textarea, .form__submit {
   cursor: pointer;
 }
 
-.form__section, .form__text, .form__submit {
+.form__section, .form__text, .form__checkbox-group, .form__submit {
   border-radius: 7px;
+}
+
+.form__text, .form__checkbox-group {
+  border: 1px solid hsl(186, 15%, 59%);
 }
 
 /* --- header --- */
 /* --- home main --- */
 .home {
-  background-color: hsl(186, 15%, 59%);
+  background-color: hsl(148, 38%, 91%);
   font-family: Karla;
   color: hsl(187, 24%, 22%);
 }
@@ -255,7 +259,7 @@ span {
 }
 
 .form__section {
-  padding: 2em;
+  padding: 1.5em;
   background-color: #fff;
 }
 .form__section--header h1 {
@@ -264,14 +268,13 @@ span {
 }
 
 .form {
-  margin-top: 2em;
+  margin-top: 2%;
 }
 .form__text {
   font-size: 1.125rem;
   line-height: 1.7;
   letter-spacing: 0;
   padding: 0.4444444444em 1em;
-  border: 1px solid hsl(186, 15%, 59%);
 }
 .form p {
   font-size: 1.125rem;
@@ -279,6 +282,18 @@ span {
 .form__name {
   display: flex;
   flex-direction: column;
+}
+.form__checkbox-group {
+  padding: 1em;
+}
+.form__checkbox-group .form__checkbox-label {
+  font-size: 1.375rem;
+  margin-left: 0.7272727273em;
+  left: 0.7272727273em;
+}
+.form__message-textarea {
+  outline: none;
+  height: clamp(10em, 30svh, 20em);
 }
 .form__submit {
   background-color: hsl(169, 82%, 27%);

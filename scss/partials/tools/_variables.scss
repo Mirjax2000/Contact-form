@@ -22,7 +22,7 @@ $clr-h1: $clr10;
 // -------------------------
 
 // background color
-$clr-body: $clr14;
+$clr-body: $clr11;
 $clr-bg-img: $clr99;
 
 // --- width ---
@@ -45,6 +45,7 @@ $font-size-80: 80%;
 // --- font-local ---
 $font-size-input: foo.rem(18);
 $font-size-p: foo.rem(18);
+$font-size-label: foo.rem(22);
 
 $pages: home, gallery, blog, contact, buttons;
 

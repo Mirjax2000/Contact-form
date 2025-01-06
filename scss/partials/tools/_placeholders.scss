@@ -56,14 +56,17 @@
 }
 
 %mb-16 {
-  margin-bottom: foo.em(16, 16);
+  margin-bottom: 1em;
 }
 
 %cursor-pointer {
   cursor: pointer;
 }
 
-%border-7{
+%border-7 {
   border-radius: 7px;
 }
 
+%border-1px {
+  border: 1px solid $clr14;
+}

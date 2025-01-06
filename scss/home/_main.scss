@@ -23,30 +23,30 @@ span {
 }
 
 .form__section {
-  padding: em(32, 16);
-  @extend %border-7;
+  padding: em(24, 16);
   background-color: $clr10;
+  @extend %border-7;
 
   &--header h1 {
     font-size: rem(32);
-    @extend %weight-700;
     letter-spacing: -1px;
+    @extend %weight-700;
   }
 }
 
 // form
 .form {
-  margin-top: em(32, 16);
+  margin-top: 2%;
 
   &__text {
     font-size: $font-size-input;
-    @extend %weight-400;
     line-height: 1.7;
     letter-spacing: 0;
+    @extend %weight-400;
 
     padding: em(8, 18) em(18, 18);
+    @extend %border-1px;
     @extend %border-7;
-    border: 1px solid $clr14;
   }
 
   p {
@@ -72,22 +72,38 @@ span {
     }
   }
 
+  &__checkbox-group {
+    @extend %border-7;
+    @extend %border-1px;
+    @extend %mb-16;
+    padding: 1em;
+
+    .form__checkbox-label {
+      font-size: $font-size-label;
+      margin-left: em(16, 22);
+      left: em(16, 22);
+    }
+  }
+
   &__message {
     &-textarea {
       @extend %mb-16;
       @extend %width-full;
       @extend %cursor-pointer;
+      outline: none;
+      height: clamp(10em, 30svh, 20em);
     }
   }
 
   &__submit {
-    @extend %width-full;
     background-color: $clr12;
     border: none;
     color: $clr10;
     font-size: $font-size-input;
     padding-block: em(16, 18);
+    @extend %width-full;
     @extend %border-7;
     @extend %weight-700;
+    @extend %cursor-pointer;
   }
 }
