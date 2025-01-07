@@ -211,31 +211,64 @@ input {
   font-weight: 700;
 }
 
-.form__email-input, .form__message-textarea, .form__submit {
+.form__name-input, .form__email-input, .form__message-textarea, .form__submit {
   width: 100%;
 }
 
-.form p, .form__name > .form__text, .form__email-input, .form__checkbox-group, .form__message-textarea {
+.form__info, .form__error {
+  margin-bottom: 0.5em;
+}
+
+.form__message {
   margin-bottom: 1em;
 }
 
-.form__name > .form__text, .form__email-input, .form__message-textarea, .form__submit {
+.form__name-input, .form__email-input, .form__checkbox--type-input, .form__message-textarea, .form__checkbox--consent-input, .form__submit {
   cursor: pointer;
 }
 
-.form__section, .form__text, .form__checkbox-group, .form__submit {
+.form__section, .form__text, .form__checkbox--type, .form__submit {
   border-radius: 7px;
 }
 
-.form__text, .form__checkbox-group {
+.form__text, .form__checkbox--type {
   border: 1px solid hsl(186, 15%, 59%);
+}
+
+.form__section--header h1, .form__info, .form__error, .form__checkbox--type, .form__checkbox--consent {
+  user-select: none;
+}
+
+.form__checkbox--type, .form__checkbox--consent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form__checkbox--type-label, .form__checkbox--consent-label {
+  margin-left: 0.8181818182em;
+  cursor: pointer;
+}
+
+.form__text, .form__checkbox--consent-label, .form__submit {
+  font-size: 1.125rem;
+}
+
+.form__checkbox--type-input:checked, .form__checkbox--consent-input:checked, .form__submit {
+  border: none;
+}
+
+.form__checkbox--type-input:checked, .form__checkbox--consent-input:checked {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 /* --- header --- */
 /* --- home main --- */
 .home {
   background-color: hsl(148, 38%, 91%);
-  font-family: Karla;
+  font-family: Karla, serif;
   color: hsl(187, 24%, 22%);
 }
 
@@ -250,7 +283,7 @@ input {
 }
 
 .container {
-  width: clamp(375px, 100%, 1440px);
+  width: clamp(23.4375em, 100%, 90em);
   padding: 1em;
 }
 
@@ -268,10 +301,9 @@ span {
 }
 
 .form {
-  margin-top: 2%;
+  margin-top: 1.4692378329%;
 }
 .form__text {
-  font-size: 1.125rem;
   line-height: 1.7;
   letter-spacing: 0;
   padding: 0.4444444444em 1em;
@@ -279,31 +311,87 @@ span {
 .form p {
   font-size: 1.125rem;
 }
-.form__name {
-  display: flex;
-  flex-direction: column;
+.form__error[data-visible=false] {
+  color: transparent;
 }
-.form__checkbox-group {
+.form__error[data-visible=true] {
+  color: hsl(0, 66%, 54%);
+}
+.form__checkboxes {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 1em;
+}
+.form__checkbox--type {
   padding: 1em;
 }
-.form__checkbox-group .form__checkbox-label {
+.form__checkbox--type:has(.form__checkbox--type-input:checked) {
+  background-color: hsl(148, 38%, 91%);
+}
+.form__checkbox--type-label {
   font-size: 1.375rem;
-  margin-left: 0.7272727273em;
-  left: 0.7272727273em;
+}
+.form__checkbox--type-input {
+  border-radius: 50%;
+  appearance: none;
+  border: rgba(88, 88, 88, 0.4) 2px solid;
+  width: 1.5em;
+  height: 1.5em;
+}
+.form__checkbox--type-input:checked {
+  background-image: url("../assets/img/icon-radio-selected.svg");
 }
 .form__message-textarea {
+  aspect-ratio: 1/1;
   outline: none;
-  height: clamp(10em, 30svh, 20em);
+}
+.form__checkbox--consent-input {
+  appearance: none;
+  border: rgba(88, 88, 88, 0.4) 2px solid;
+  width: 1.1em;
+  height: 1.1em;
+}
+.form__checkbox--consent-input:checked {
+  background-image: url("../assets/img/icon-checkbox-check.svg");
 }
 .form__submit {
   background-color: hsl(169, 82%, 27%);
-  border: none;
   color: #fff;
-  font-size: 1.125rem;
   padding-block: 0.8888888889em;
+  transition: 0.2s ease-in-out background-color;
+}
+.form__submit:hover {
+  background-color: hsl(187, 24%, 22%);
 }
 
 /* --- footer --- */
 /* --- media queries --- */
+@media only screen and (min-width: 31.3125em) {
+  .form__message-textarea {
+    height: 6.6666666667em;
+  }
+}
+@media only screen and (min-width: 46.875em) {
+  .form__section {
+    padding: 3em;
+  }
+  .form__fullname {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+  .form__checkboxes {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 1em;
+  }
+  .form__fullname > *, .form__checkboxes > * {
+    flex: 1;
+  }
+}
 
 /*# sourceMappingURL=home.css.map */

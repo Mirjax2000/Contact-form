@@ -7,6 +7,11 @@
   box-sizing: inherit;
 }
 
+@mixin container($min, $max, $padding) {
+  width: clamp($min, 100%, $max);
+  padding: $padding;
+}
+
 @mixin selection($clr-bg-selection: black, $clr-selection: white) {
   ::selection {
     background-color: $clr-bg-selection;
@@ -14,16 +19,13 @@
   }
 }
 
-@mixin flex-center() {
+@mixin flex($justify: center, $align: center) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: $justify;
+  align-items: $align;
 }
 
-@mixin container($width) {
-  max-width: $width;
-  margin-inline: auto;
-}
+
 
 // --- visually-hidden ---
 @mixin black-hole {
