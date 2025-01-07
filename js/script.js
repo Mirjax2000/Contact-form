@@ -4,7 +4,7 @@
 // $(function () {});
 // -----------------
 
-(function () {
+$(function () {
   const form = $("#form"),
     first_name = $("#first_name"),
     last_name = $("#last_name"),
@@ -23,5 +23,7 @@
     checkbox_consent,
     checkbox_consent,
     message,
+    error,
+    form,
   );
-})(jQuery);
+});
