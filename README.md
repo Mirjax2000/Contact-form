@@ -1,6 +1,6 @@
 # Webová stránka se SASS a moderními nástroji
 
-[Zobrazit kontaktní formulář](https://mirjax2000.github.io/Contact-form/)
+[Zobrazit formulář](https://mirjax2000.github.io/Contact-form/)
 
 Tento projekt představuje webovou stránku vytvořenou pomocí **SASS** a moderních nástrojů pro správu
 stylů, organizaci kódu a zlepšení vývojového procesu. Klíčové prvky zahrnují využití **PostCSS
