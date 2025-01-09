@@ -6,12 +6,8 @@
 
 /* --- normalize css --- */
 html {
-  -moz-tab-size: 4;
-    -o-tab-size: 4;
-       tab-size: 4;
-  -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  tab-size: 4;
+  text-size-adjust: 100%;
   font-optical-sizing: auto;
   scroll-behavior: smooth;
   font-size: var(--font-size);
@@ -41,8 +37,7 @@ hr {
 }
 
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b,
@@ -103,9 +98,7 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
-     -moz-appearance: button;
-          appearance: button;
+  appearance: button;
 }
 
 ::-moz-focus-inner {
@@ -135,20 +128,16 @@ progress {
 }
 
 [type=search] {
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  appearance: textfield;
   outline-offset: -2px;
 }
 
 ::-webkit-search-decoration {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-          appearance: button;
+  appearance: button;
   font: inherit;
 }
 
@@ -247,9 +236,7 @@ input {
 }
 
 .form__section--header h1, .form__info, .form__error, .form__name-label, .form__email-label, .form__checkbox--type, .form__checkbox--consent {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .form__checkbox--type, .form__checkbox--consent {
@@ -343,9 +330,7 @@ span {
 }
 .form__checkbox--type-input {
   border-radius: 50%;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   border: rgba(88, 88, 88, 0.4) 2px solid;
   width: 1.5em;
   height: 1.5em;
@@ -358,9 +343,7 @@ span {
   outline: none;
 }
 .form__checkbox--consent-input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   border: rgba(88, 88, 88, 0.4) 2px solid;
   width: 1.1em;
   height: 1.1em;
@@ -405,4 +388,5 @@ span {
     flex: 1;
   }
 }
+
 /*# sourceMappingURL=home.css.map */
