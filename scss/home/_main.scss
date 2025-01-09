@@ -8,10 +8,6 @@
   color: $clr15;
 }
 
-.hide {
-  @include black-hole;
-}
-
 .container {
   @include container($min-width, $max-width, 1em);
   @extend %auto-margin;
@@ -22,17 +18,17 @@ span {
 }
 
 .form__section {
+  @extend %border-7;
+
   padding: em(24, 16);
   background-color: $clr10;
 
-  @extend %border-7;
-
   &--header h1 {
-    font-size: rem(32);
-    letter-spacing: -1px;
-
     @extend %weight-700;
     @extend %no-selection;
+
+    font-size: rem(32);
+    letter-spacing: -1px;
   }
 }
 
@@ -41,19 +37,18 @@ span {
   margin-top: percentage(16 / 1089);
 
   &__text {
+    @extend %weight-400;
+    @extend %border-1px;
+    @extend %border-7;
     @extend %font-size-input;
 
     line-height: 1.7;
     letter-spacing: 0;
     padding: em(8, 18) em(18, 18);
-
-    @extend %weight-400;
-    @extend %border-1px;
-    @extend %border-7;
   }
 
   p {
-    font-size: $font-size-p;
+    @extend %font-size-label-p;
   }
 
   &__info {
@@ -62,8 +57,8 @@ span {
   }
 
   &__error {
-    @extend %no-selection;
     @extend %mb-min;
+    @extend %no-selection;
 
     &[data-visible="false"] {
       color: transparent;
@@ -76,6 +71,14 @@ span {
 
   &__name,
   &__email {
+    &-label {
+      @extend %mb-min;
+      @extend %no-selection;
+      @extend %font-size-label-p;
+
+      display: inline-block;
+    }
+
     &-input {
       @extend %cursor-pointer;
       @extend %width-full;
@@ -104,25 +107,23 @@ span {
 
     &-label {
       @extend %checkbox-label;
-
-      font-size: $font-size-label;
+      @extend %font-size-label;
     }
 
     &-input {
-      border-radius: 50%;
-      appearance: none;
-
       @extend %cursor-pointer;
 
+      border-radius: 50%;
+      appearance: none;
       border: rgb(88 88 88 / 40%) 2px solid;
       width: 1.5em;
       height: 1.5em;
 
       &:checked {
-        background-image: url("#{$img-path}/icon-radio-selected.svg");
-
         @extend %bck-img;
         @extend %border-none;
+
+        background-image: url("#{$img-path}/icon-radio-selected.svg");
       }
     }
   }
@@ -132,11 +133,9 @@ span {
 
     &-textarea {
       @extend %width-full;
-
-      aspect-ratio: 1/1;
-
       @extend %cursor-pointer;
 
+      aspect-ratio: 1/1;
       outline: none;
     }
   }
@@ -154,10 +153,10 @@ span {
       height: 1.1em;
 
       &:checked {
-        background-image: url("#{$img-path}/icon-checkbox-check.svg");
-
         @extend %bck-img;
         @extend %border-none;
+
+        background-image: url("#{$img-path}/icon-checkbox-check.svg");
       }
     }
 
@@ -168,19 +167,16 @@ span {
   }
 
   &__submit {
-    background-color: $clr12;
-
     @extend %border-none;
-
-    color: $clr10;
-    padding-block: em(16, 18);
-
     @extend %font-size-input;
     @extend %width-full;
     @extend %border-7;
     @extend %weight-700;
     @extend %cursor-pointer;
 
+    background-color: $clr12;
+    color: $clr10;
+    padding-block: em(16, 18);
     transition: 0.2s ease-in-out background-color;
 
     &:hover {
