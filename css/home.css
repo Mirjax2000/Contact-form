@@ -1,3 +1,4 @@
+
 /* Error: expected "{".
  *    ,
  * 88 | $cont__padding__inln: 16;
@@ -7,6 +8,7 @@
  *   ..\partials\tools\_index.scss 5:1        @use
  *   home.scss 1:1                            root stylesheet */
 
+
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
       "Droid Sans Mono", monospace, monospace;
@@ -15,5 +17,4 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a    \2577 \a 88 \2502  $cont__padding__inln: 16;\d\a    \2502                          ^\a    \2575 \a   ..\\partials\\tools\\_variables.scss 88:25  @forward\a   ..\\partials\\tools\\_index.scss 5:1        @use\a   home.scss 1:1                            root stylesheet';
-}
+
