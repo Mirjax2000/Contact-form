@@ -78,6 +78,7 @@ span {
 
       display: inline-block;
     }
+
     &-input {
       @extend %cursor-pointer;
       @extend %width-full;
