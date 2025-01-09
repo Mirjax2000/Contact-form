@@ -22,12 +22,12 @@ $clr-h1: $clr10;
 // -------------------------
 
 // background color
-$clr-body: $clr14;
+$clr-body: $clr11;
 $clr-bg-img: $clr99;
 
 // --- width ---
-$max-width: 1440px;
-$min-width: 375px;
+$max-width: foo.em(1440, 16);
+$min-width: foo.em(375, 16);
 
 // --- break points ---
 $bp-max: $max-width;
@@ -45,6 +45,7 @@ $font-size-80: 80%;
 // --- font-local ---
 $font-size-input: foo.rem(18);
 $font-size-p: foo.rem(18);
+$font-size-label: foo.rem(22);
 
 // --- aray ---
 $pages: home, gallery, blog, contact, buttons;

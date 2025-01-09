@@ -1,5 +1,38 @@
-@use '../partials/tools' as *;
-@use '../partials/assembler' as *;
+@use "../partials/tools" as *;
+@use "../partials/assembler" as *;
 
 /* --- media queries --- */
+@include mq-default-min-width(em(501, 16)) {
+  .form {
+    &__message {
+      &-textarea {
+        height: em(120, 18);
+      }
+    }
+  }
+}
 
+@include mq-default-min-width(em(750, 16)) {
+  .form {
+    &__section {
+      padding: em(48, 16);
+    }
+
+    &__fullname {
+      @include flex(space-between);
+      gap: 1em;
+    }
+
+    &__checkboxes {
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      gap: 1em;
+    }
+
+    &__fullname > *,
+    &__checkboxes > * {
+      flex: 1;
+    }
+  }
+}
