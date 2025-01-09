@@ -215,12 +215,8 @@ input {
   width: 100%;
 }
 
-.form__info, .form__error, .form__name-label, .form__email-label {
+.form__info, .form__error, .form__name-label, .form__email-label, .form__message-label {
   margin-bottom: 0.5em;
-}
-
-.form__message {
-  margin-bottom: 1em;
 }
 
 .form__name-input, .form__email-input, .form__checkbox--type-input, .form__message-textarea, .form__checkbox--consent-input, .form__submit {
@@ -235,7 +231,7 @@ input {
   border: 1px solid hsl(186, 15%, 59%);
 }
 
-.form__section--header h1, .form__info, .form__error, .form__name-label, .form__email-label, .form__checkbox--type, .form__checkbox--consent {
+.form__section--header h1, .form__info, .form__error, .form__name-label, .form__email-label, .form__checkbox--type, .form__message-label, .form__checkbox--consent {
   user-select: none;
 }
 
@@ -258,7 +254,7 @@ input {
   font-size: 1.375rem;
 }
 
-.form p, .form__name-label, .form__email-label {
+.form p, .form__name-label, .form__email-label, .form__message-label {
   font-size: 1.125rem;
 }
 
@@ -270,6 +266,10 @@ input {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+.form__name-input:user-invalid + .form__error, .form__email-input:user-invalid + .form__error, .form__message-textarea:user-invalid + .form__error, .form__checkbox--consent:has(:user-invalid) + .form__error {
+  color: hsl(0, 66%, 54%);
 }
 
 /* --- header --- */
@@ -306,11 +306,9 @@ span {
   letter-spacing: 0;
   padding: 0.4444444444em 1em;
 }
-.form__error[data-visible=false] {
+.form__error {
   color: transparent;
-}
-.form__error[data-visible=true] {
-  color: hsl(0, 66%, 54%);
+  transition: 0.1s ease-in-out color;
 }
 .form__name-label, .form__email-label {
   display: inline-block;

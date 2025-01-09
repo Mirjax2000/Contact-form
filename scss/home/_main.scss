@@ -60,13 +60,8 @@ span {
     @extend %mb-min;
     @extend %no-selection;
 
-    &[data-visible="false"] {
-      color: transparent;
-    }
-
-    &[data-visible="true"] {
-      color: $clr13;
-    }
+    color: transparent;
+    transition: 0.1s ease-in-out color;
   }
 
   &__name,
@@ -82,6 +77,10 @@ span {
     &-input {
       @extend %cursor-pointer;
       @extend %width-full;
+
+      &:user-invalid + .form__error {
+        @extend %color-red;
+      }
     }
   }
 
@@ -129,7 +128,11 @@ span {
   }
 
   &__message {
-    @extend %mb-mid;
+    &-label {
+      @extend %mb-min;
+      @extend %no-selection;
+      @extend %font-size-label-p;
+    }
 
     &-textarea {
       @extend %width-full;
@@ -137,7 +140,15 @@ span {
 
       aspect-ratio: 1/1;
       outline: none;
+
+      &:user-invalid + .form__error {
+        @extend %color-red;
+      }
     }
+  }
+
+  &__checkbox--consent:has(:user-invalid) + .form__error {
+    @extend %color-red;
   }
 
   &__checkbox--consent {
