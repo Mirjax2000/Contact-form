@@ -6,8 +6,12 @@
 
 /*   --- normalize css --- */
 html {
-  tab-size: 4;
-  text-size-adjust: 100%;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
   font-optical-sizing: auto;
   scroll-behavior: smooth;
   font-size: var(--font-size);
@@ -30,7 +34,8 @@ hr {
 }
 
 abbr[title] {
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 b,
@@ -91,7 +96,9 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  appearance: button;
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
 }
 
 ::-moz-focus-inner {
@@ -121,16 +128,20 @@ progress {
 }
 
 [type=search] {
-  appearance: textfield;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
   outline-offset: -2px;
 }
 
 ::-webkit-search-decoration {
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
 }
 
 ::-webkit-file-upload-button {
-  appearance: button;
+  -webkit-appearance: button;
+          appearance: button;
   font: inherit;
 }
 
@@ -195,3 +206,4 @@ input {
 /*  --- header --- */
 /* --- home main --- */
 /* media queries */
+/*# sourceMappingURL=home.css.map */
