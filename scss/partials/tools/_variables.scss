@@ -36,7 +36,7 @@ $bp-min: 650px;
 $bp-mni: $min-width;
 
 // --- font-global ---
-$font-karla: Karla;
+$font-karla: karla;
 $font-size-110: 110%;
 $font-size-100: 100%;
 $font-size-90: 90%;
@@ -46,6 +46,7 @@ $font-size-80: 80%;
 $font-size-input: foo.rem(18);
 $font-size-p: foo.rem(18);
 
+// --- aray ---
 $pages: home, gallery, blog, contact, buttons;
 
 // icon colors
@@ -63,3 +64,6 @@ $buttons-color: (
   "LearnMoreMain": $clr11,
   "comments": $clr11,
 );
+
+// --- assets-path ---
+$img-path: "../assets/img";
