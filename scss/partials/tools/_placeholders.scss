@@ -1,6 +1,5 @@
 @use "./variables" as *;
 @use "./functions" as foo;
-@use "./mixins" as mix;
 
 /* --- placeholders --- */
 
@@ -56,53 +55,15 @@
   width: 100%;
 }
 
-%mb-min {
-  margin-bottom: foo.em(9, 18);
-}
-
-%mb-mid {
-  margin-bottom: foo.em(18, 18);
+%mb-16 {
+  margin-bottom: foo.em(16, 16);
 }
 
 %cursor-pointer {
   cursor: pointer;
 }
 
-%border-7 {
+%border-7{
   border-radius: 7px;
 }
 
-%border-1px {
-  border: 1px solid $clr14;
-}
-
-%no-selection {
-  user-select: none;
-}
-
-%flex-start {
-  @include mix.flex(flex-start);
-}
-
-%checkbox-label {
-  margin-left: foo.em(18, 22);
-  cursor: pointer;
-}
-
-%font-size-input {
-  font-size: $font-size-input;
-}
-
-%border-none {
-  border: none;
-}
-
-%flex-1 {
-  flex: 1;
-}
-
-%bck-img {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}

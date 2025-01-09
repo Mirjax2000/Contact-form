@@ -24,11 +24,13 @@ span {
 .form__section {
   padding: em(24, 16);
   background-color: $clr10;
+
   @extend %border-7;
 
   &--header h1 {
     font-size: rem(32);
     letter-spacing: -1px;
+
     @extend %weight-700;
     @extend %no-selection;
   }
@@ -36,13 +38,15 @@ span {
 
 // form
 .form {
-  margin-top: percentage(16/1089);
+  margin-top: percentage(16 / 1089);
 
   &__text {
     @extend %font-size-input;
+
     line-height: 1.7;
     letter-spacing: 0;
     padding: em(8, 18) em(18, 18);
+
     @extend %weight-400;
     @extend %border-1px;
     @extend %border-7;
@@ -91,6 +95,7 @@ span {
     @extend %border-1px;
     @extend %flex-start;
     @extend %no-selection;
+
     padding: 1em;
 
     &:has(&-input:checked) {
@@ -99,19 +104,23 @@ span {
 
     &-label {
       @extend %checkbox-label;
+
       font-size: $font-size-label;
     }
 
     &-input {
       border-radius: 50%;
       appearance: none;
+
       @extend %cursor-pointer;
-      border: rgba(88, 88, 88, 0.4) 2px solid;
+
+      border: rgb(88 88 88 / 40%) 2px solid;
       width: 1.5em;
       height: 1.5em;
 
       &:checked {
-        background-image: url("../assets/img/icon-radio-selected.svg");
+        background-image: url("#{$img-path}/icon-radio-selected.svg");
+
         @extend %bck-img;
         @extend %border-none;
       }
@@ -123,8 +132,11 @@ span {
 
     &-textarea {
       @extend %width-full;
+
       aspect-ratio: 1/1;
+
       @extend %cursor-pointer;
+
       outline: none;
     }
   }
@@ -135,13 +147,15 @@ span {
 
     &-input {
       @extend %cursor-pointer;
+
       appearance: none;
-      border: rgba(88, 88, 88, 0.4) 2px solid;
+      border: rgb(88 88 88 / 40%) 2px solid;
       width: 1.1em;
       height: 1.1em;
 
       &:checked {
-        background-image: url("../assets/img/icon-checkbox-check.svg");
+        background-image: url("#{$img-path}/icon-checkbox-check.svg");
+
         @extend %bck-img;
         @extend %border-none;
       }
@@ -155,14 +169,18 @@ span {
 
   &__submit {
     background-color: $clr12;
+
     @extend %border-none;
+
     color: $clr10;
     padding-block: em(16, 18);
+
     @extend %font-size-input;
     @extend %width-full;
     @extend %border-7;
     @extend %weight-700;
     @extend %cursor-pointer;
+
     transition: 0.2s ease-in-out background-color;
 
     &:hover {
