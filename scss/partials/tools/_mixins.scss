@@ -38,7 +38,7 @@
   white-space: nowrap;
 }
 
-// mediaqueries max-width
+// mediaqueris max-width
 
 @mixin mq-default-max-width($width) {
   @media only screen and (max-width: $width) {
@@ -46,7 +46,7 @@
   }
 }
 
-// mediaqueries min-width
+// mediaqueris min-width
 @mixin mq-default-min-width($width) {
   @media only screen and (min-width: $width) {
     @content;

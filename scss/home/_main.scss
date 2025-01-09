@@ -8,6 +8,10 @@
   color: $clr15;
 }
 
+.hide {
+  @include black-hole;
+}
+
 .container {
   @include container($min-width, $max-width, 1em);
   @extend %auto-margin;
@@ -18,37 +22,34 @@ span {
 }
 
 .form__section {
-  @extend %border-7;
-
   padding: em(24, 16);
   background-color: $clr10;
+  @extend %border-7;
 
   &--header h1 {
-    @extend %weight-700;
-    @extend %no-selection;
-
     font-size: rem(32);
     letter-spacing: -1px;
+    @extend %weight-700;
+    @extend %no-selection;
   }
 }
 
 // form
 .form {
-  margin-top: percentage(16 / 1089);
+  margin-top: percentage(16/1089);
 
   &__text {
-    @extend %weight-400;
-    @extend %border-1px;
-    @extend %border-7;
     @extend %font-size-input;
-
     line-height: 1.7;
     letter-spacing: 0;
     padding: em(8, 18) em(18, 18);
+    @extend %weight-400;
+    @extend %border-1px;
+    @extend %border-7;
   }
 
   p {
-    @extend %font-size-label-p;
+    font-size: $font-size-p;
   }
 
   &__info {
@@ -57,8 +58,8 @@ span {
   }
 
   &__error {
-    @extend %mb-min;
     @extend %no-selection;
+    @extend %mb-min;
 
     &[data-visible="false"] {
       color: transparent;
@@ -71,14 +72,6 @@ span {
 
   &__name,
   &__email {
-    &-label {
-      @extend %mb-min;
-      @extend %no-selection;
-      @extend %font-size-label-p;
-
-      display: inline-block;
-    }
-
     &-input {
       @extend %cursor-pointer;
       @extend %width-full;
@@ -98,7 +91,6 @@ span {
     @extend %border-1px;
     @extend %flex-start;
     @extend %no-selection;
-
     padding: 1em;
 
     &:has(&-input:checked) {
@@ -107,23 +99,21 @@ span {
 
     &-label {
       @extend %checkbox-label;
-      @extend %font-size-label;
+      font-size: $font-size-label;
     }
 
     &-input {
-      @extend %cursor-pointer;
-
       border-radius: 50%;
       appearance: none;
-      border: rgb(88 88 88 / 40%) 2px solid;
+      @extend %cursor-pointer;
+      border: rgba(88, 88, 88, 0.4) 2px solid;
       width: 1.5em;
       height: 1.5em;
 
       &:checked {
+        background-image: url("../assets/img/icon-radio-selected.svg");
         @extend %bck-img;
         @extend %border-none;
-
-        background-image: url("#{$img-path}/icon-radio-selected.svg");
       }
     }
   }
@@ -133,9 +123,8 @@ span {
 
     &-textarea {
       @extend %width-full;
-      @extend %cursor-pointer;
-
       aspect-ratio: 1/1;
+      @extend %cursor-pointer;
       outline: none;
     }
   }
@@ -146,17 +135,15 @@ span {
 
     &-input {
       @extend %cursor-pointer;
-
       appearance: none;
-      border: rgb(88 88 88 / 40%) 2px solid;
+      border: rgba(88, 88, 88, 0.4) 2px solid;
       width: 1.1em;
       height: 1.1em;
 
       &:checked {
+        background-image: url("../assets/img/icon-checkbox-check.svg");
         @extend %bck-img;
         @extend %border-none;
-
-        background-image: url("#{$img-path}/icon-checkbox-check.svg");
       }
     }
 
@@ -167,16 +154,15 @@ span {
   }
 
   &__submit {
+    background-color: $clr12;
     @extend %border-none;
+    color: $clr10;
+    padding-block: em(16, 18);
     @extend %font-size-input;
     @extend %width-full;
     @extend %border-7;
     @extend %weight-700;
     @extend %cursor-pointer;
-
-    background-color: $clr12;
-    color: $clr10;
-    padding-block: em(16, 18);
     transition: 0.2s ease-in-out background-color;
 
     &:hover {
