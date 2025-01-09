@@ -85,11 +85,10 @@
                 id="first_name"
                 name="first_name"
                 required
+                title="Prosim zadejte Vase krestni jmeno."
                 type="text"
               />
-              <p class="form__error" data-visible="false">
-                This field is required
-              </p>
+              <p class="form__error">This field is required</p>
             </div>
 
             <div class="form__name">
@@ -101,11 +100,10 @@
                 id="last_name"
                 name="last_name"
                 required
+                title="Prosim zadejte Vase prijmeni."
                 type="text"
               />
-              <p class="form__error" data-visible="false">
-                This field is required
-              </p>
+              <p class="form__error">This field is required</p>
             </div>
           </div>
 
@@ -118,11 +116,10 @@
               id="email_address"
               name="email_address"
               required
+              title="Prosim zadejte Vasi emailovou adresu."
               type="email"
             />
-            <p class="form__error" data-visible="false">
-              Please enter a valid email address
-            </p>
+            <p class="form__error">Please enter a valid email address</p>
           </div>
 
           <p class="form__info">Query Type <span>*</span></p>
@@ -151,9 +148,7 @@
               >
             </div>
           </div>
-          <p class="form__error" data-visible="false">
-            Please enter a query type
-          </p>
+          <p class="form__error">Please enter a query type</p>
 
           <div class="form__message">
             <label class="form__message-label" for="message"
@@ -165,10 +160,9 @@
               name="message"
               required
               style="resize: none"
+              title="Poslete nam zpravu"
             ></textarea>
-            <p class="form__error" data-visible="false">
-              This field is required
-            </p>
+            <p class="form__error">This field is required</p>
           </div>
 
           <div class="form__checkbox--consent">
@@ -176,13 +170,14 @@
               class="form__checkbox--consent-input"
               id="consent"
               name="consent"
+              required
               type="checkbox"
             />
             <label class="form__checkbox--consent-label" for="consent"
               >I consent to being contacted by the team <span>*</span></label
             >
           </div>
-          <p class="form__error" data-visible="false">
+          <p class="form__error">
             To submit this form, please consent to being contacted
           </p>
 
