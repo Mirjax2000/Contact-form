@@ -50,6 +50,21 @@
     </style>
 
     <link href="./css/home.css" rel="stylesheet" />
+    <link
+      as="image"
+      href="./assets/img/icon-checkbox-check.svg"
+      rel="prefetch"
+    />
+    <link
+      as="image"
+      href="./assets/img/icon-radio-selected.svg"
+      rel="prefetch"
+    />
+    <link
+      as="image"
+      href="./assets/img/icon-success-check.svg"
+      rel="prefetch"
+    />
   </head>
 
   <body class="home">
@@ -60,37 +75,44 @@
         </header>
 
         <form action="" class="form" method="post">
-          <div class="form__name">
-            <label class="form__name-label hide" for="first_name"
-              >First Name</label
-            >
-            <p>First Name <span>*</span></p>
-            <input
-              class="form__text form__name-input"
-              id="first_name"
-              name="first_name"
-              required
-              type="text"
-            />
+          <div class="form__fullname">
+            <div class="form__name">
+              <label class="form__name-label" for="first_name"
+                >First Name <span>*</span></label
+              >
+              <input
+                class="form__text form__name-input"
+                id="first_name"
+                name="first_name"
+                required
+                type="text"
+              />
+              <p class="form__error" data-visible="false">
+                This field is required
+              </p>
+            </div>
 
-            <label class="form__name-label hide" for="last_name"
-              >Last name</label
-            >
-            <p>Last Name <span>*</span></p>
-            <input
-              class="form__text form__name-input"
-              id="last_name"
-              name="last_name"
-              required
-              type="text"
-            />
+            <div class="form__name">
+              <label class="form__name-label" for="last_name"
+                >Last name <span>*</span></label
+              >
+              <input
+                class="form__text form__name-input"
+                id="last_name"
+                name="last_name"
+                required
+                type="text"
+              />
+              <p class="form__error" data-visible="false">
+                This field is required
+              </p>
+            </div>
           </div>
 
           <div class="form__email">
-            <label class="form__email-label hide" for="email_address"
-              >Email Address</label
+            <label class="form__email-label" for="email_address"
+              >Email Address <span>*</span></label
             >
-            <p>Email Address <span>*</span></p>
             <input
               class="form__text form__email-input"
               id="email_address"
@@ -98,36 +120,45 @@
               required
               type="email"
             />
+            <p class="form__error" data-visible="false">
+              Please enter a valid email address
+            </p>
           </div>
 
-          <div class="form__checkbox-group">
-            <p>Query Type <span>*</span></p>
-            <input
-              class="form__checkbox-input"
-              id="general"
-              name="general"
-              type="checkbox"
-            />
-            <label class="form__checkbox-label" for="general"
-              >General Enquiry</label
-            >
+          <p class="form__info">Query Type <span>*</span></p>
+          <div class="form__checkboxes">
+            <div class="form__checkbox--type">
+              <input
+                class="form__checkbox--type-input"
+                id="general"
+                name="general"
+                type="checkbox"
+              />
+              <label class="form__checkbox--type-label" for="general"
+                >General Enquiry</label
+              >
+            </div>
 
-            <input
-              class="form__checkbox-input"
-              id="support"
-              name="support"
-              type="checkbox"
-            />
-            <label class="form__checkbox-label" for="support"
-              >Support Request</label
-            >
+            <div class="form__checkbox--type">
+              <input
+                class="form__checkbox--type-input"
+                id="support"
+                name="support"
+                type="checkbox"
+              />
+              <label class="form__checkbox--type-label" for="support"
+                >Support Request</label
+              >
+            </div>
           </div>
+          <p class="form__error" data-visible="false">
+            Please enter a query type
+          </p>
 
           <div class="form__message">
-            <label class="form__message-label hide" for="message"
-              >Text Area</label
+            <label class="form__message-label" for="message"
+              >Text Area <span>*</span></label
             >
-            <p>Message <span>*</span></p>
             <textarea
               class="form__text form__message-textarea"
               id="message"
@@ -135,7 +166,25 @@
               required
               style="resize: none"
             ></textarea>
+            <p class="form__error" data-visible="false">
+              This field is required
+            </p>
           </div>
+
+          <div class="form__checkbox--consent">
+            <input
+              class="form__checkbox--consent-input"
+              id="consent"
+              name="consent"
+              type="checkbox"
+            />
+            <label class="form__checkbox--consent-label" for="consent"
+              >I consent to being contacted by the team <span>*</span></label
+            >
+          </div>
+          <p class="form__error" data-visible="false">
+            To submit this form, please consent to being contacted
+          </p>
 
           <button class="form__submit" type="submit">Submit</button>
         </form>
