@@ -3,6 +3,10 @@
 
 /* --- media queries --- */
 @include mq-default-min-width(em(501, 16)) {
+  .form__section {
+    margin-top: 5rem;
+  }
+
   .form {
     &__message {
       &-textarea {
@@ -13,21 +17,25 @@
 }
 
 @include mq-default-min-width(em(750, 16)) {
+  .modal .modal__sidebar {
+    width: 60%;
+    margin-inline: auto;
+  }
+
   .form {
     &__section {
       padding: em(48, 16);
     }
 
-    &__fullname {
+    &__fullname,
+    &__checkboxes {
       @include flex(space-between);
+
       gap: 1em;
     }
 
     &__checkboxes {
-      justify-content: space-between;
-      align-items: center;
       flex-direction: row;
-      gap: 1em;
     }
 
     &__fullname > *,

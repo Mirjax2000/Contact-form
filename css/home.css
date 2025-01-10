@@ -1,7 +1,6 @@
 /* --- root css --- */
 :root {
   --font-size: 100%;
-  --container: 1440px;
 }
 
 /* --- normalize css --- */
@@ -199,8 +198,16 @@ input {
 }
 /* --- general settings --- */
 /* --- placeholders --- */
-.container {
+.container, .modal__sidebar {
   margin-inline: auto;
+}
+
+.container {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
 }
 
 .form__text {
@@ -211,11 +218,11 @@ input {
   font-weight: 700;
 }
 
-.form__name-input, .form__email-input, .form__message-textarea, .form__submit {
+.modal, .form__name-input, .form__email-input, .form__message-textarea, .form__submit {
   width: 100%;
 }
 
-.form__info, .form__error, .form__name-label, .form__email-label, .form__message-label {
+.modal__header, .form__info, .form__error, .form__name-label, .form__email-label, .form__message-label {
   margin-bottom: 0.5em;
 }
 
@@ -223,7 +230,7 @@ input {
   cursor: pointer;
 }
 
-.form__section, .form__text, .form__checkbox--type, .form__submit {
+.modal__sidebar, .form__section, .form__text, .form__checkbox--type, .form__submit {
   border-radius: 7px;
 }
 
@@ -231,11 +238,11 @@ input {
   border: 1px solid hsl(186, 15%, 59%);
 }
 
-.form__section--header h1, .form__info, .form__error, .form__name-label, .form__email-label, .form__checkbox--type, .form__message-label, .form__checkbox--consent {
+.modal, .form__section--header h1, .form__info, .form__error, .form__name-label, .form__email-label, .form__checkbox--type, .form__message-label, .form__checkbox--consent {
   user-select: none;
 }
 
-.form__checkbox--type, .form__checkbox--consent {
+.modal__header, .form__checkbox--type, .form__checkbox--consent {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -254,7 +261,7 @@ input {
   font-size: 1.375rem;
 }
 
-.form p, .form__name-label, .form__email-label, .form__message-label {
+.modal__content p, .form p, .form__name-label, .form__email-label, .form__message-label {
   font-size: 1.125rem;
 }
 
@@ -272,6 +279,18 @@ input {
   color: hsl(0, 66%, 54%);
 }
 
+.modal__sidebar, .modal__header img, .form__submit:hover {
+  background-color: hsl(187, 24%, 22%);
+}
+
+.form__name-input:hover, .form__name-input:focus, .form__name-input:active, .form__email-input:hover, .form__email-input:focus, .form__email-input:active, .form__checkbox--type:hover, .form__checkbox--type:focus, .form__checkbox--type:active, .form__message-textarea:hover, .form__message-textarea:focus, .form__message-textarea:active {
+  border-color: hsl(169, 82%, 27%);
+}
+
+.form__name-input, .form__email-input, .form__checkbox--type, .form__message-textarea {
+  transition: 0.1s ease-in-out border-color;
+}
+
 /* --- header --- */
 /* --- home main --- */
 .home {
@@ -281,10 +300,24 @@ input {
 }
 
 .container {
-  width: clamp(23.4375em, 100%, 90em);
+  width: clamp(23.4375em, 100%, 56.25em);
   padding: 1em;
 }
 
+.modal {
+  top: 1em;
+  left: 0;
+  z-index: 100;
+}
+.modal__sidebar {
+  padding: 1em;
+  margin-inline: 1em;
+  color: hsl(148, 38%, 91%);
+  box-shadow: 1px 1px 5px hsl(187, 24%, 22%);
+}
+.modal__header {
+  gap: 1em;
+}
 span {
   color: dodgerblue;
 }
@@ -355,32 +388,32 @@ span {
   padding-block: 0.8888888889em;
   transition: 0.2s ease-in-out background-color;
 }
-.form__submit:hover {
-  background-color: hsl(187, 24%, 22%);
-}
-
 /* --- footer --- */
 /* --- media queries --- */
 @media only screen and (min-width: 31.3125em) {
+  .form__section {
+    margin-top: 5rem;
+  }
   .form__message-textarea {
     height: 6.6666666667em;
   }
 }
 @media only screen and (min-width: 46.875em) {
+  .modal .modal__sidebar {
+    width: 60%;
+    margin-inline: auto;
+  }
   .form__section {
     padding: 3em;
   }
-  .form__fullname {
+  .form__fullname, .form__checkboxes {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1em;
   }
   .form__checkboxes {
-    justify-content: space-between;
-    align-items: center;
     flex-direction: row;
-    gap: 1em;
   }
   .form__fullname > *, .form__checkboxes > * {
     flex: 1;
