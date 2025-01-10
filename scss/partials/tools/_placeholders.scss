@@ -8,6 +8,14 @@
   margin-inline: auto;
 }
 
+%position-relative {
+  position: relative;
+}
+
+%position-absolute {
+  position: absolute;
+}
+
 // --- font weights ---
 
 %weight-400 {
@@ -90,4 +98,20 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+%color-red {
+  color: $clr13;
+}
+
+%background-darkgreen {
+  background-color: $clr15;
+}
+
+%border-lightgreen {
+  border-color: $clr12;
+}
+
+%trans-border{
+  transition: .1s ease-in-out border-color;
 }
