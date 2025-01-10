@@ -11,6 +11,45 @@
 .container {
   @include container($min-width, $max-width, 1em);
   @extend %auto-margin;
+  @extend %position-relative;
+}
+
+.modal {
+  @extend %position-absolute;
+  @extend %width-full;
+  @extend %no-selection;
+
+  top: 1em;
+  left: 0;
+  z-index: 100;
+
+  &__sidebar {
+    @extend %border-7;
+    @extend %auto-margin;
+    @extend %background-darkgreen;
+
+    padding: 1em;
+    margin-inline: 1em;
+    color: $clr11;
+    box-shadow: 1px 1px 5px $clr15;
+  }
+
+  &__header {
+    @extend %flex-start;
+    @extend %mb-min;
+
+    & img {
+      @extend %background-darkgreen;
+    }
+
+    gap: 1em;
+  }
+
+  &__content {
+    p {
+      @extend %font-size-label-p;
+    }
+  }
 }
 
 span {
@@ -77,9 +116,16 @@ span {
     &-input {
       @extend %cursor-pointer;
       @extend %width-full;
+      @extend %trans-border;
 
       &:user-invalid + .form__error {
         @extend %color-red;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        @extend %border-lightgreen;
       }
     }
   }
@@ -97,11 +143,18 @@ span {
     @extend %border-1px;
     @extend %flex-start;
     @extend %no-selection;
+    @extend %trans-border;
 
     padding: 1em;
 
     &:has(&-input:checked) {
       background-color: $clr11;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      @extend %border-lightgreen;
     }
 
     &-label {
@@ -137,12 +190,19 @@ span {
     &-textarea {
       @extend %width-full;
       @extend %cursor-pointer;
+      @extend %trans-border;
 
       aspect-ratio: 1/1;
       outline: none;
 
       &:user-invalid + .form__error {
         @extend %color-red;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        @extend %border-lightgreen;
       }
     }
   }
@@ -191,7 +251,7 @@ span {
     transition: 0.2s ease-in-out background-color;
 
     &:hover {
-      background-color: $clr15;
+      @extend %background-darkgreen;
     }
   }
 }
