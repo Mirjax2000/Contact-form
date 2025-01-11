@@ -25,7 +25,7 @@
         });
     });
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         if (form.checkValidity()) {
             modal.classList.remove("hide");
         }
