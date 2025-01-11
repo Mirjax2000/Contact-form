@@ -49,7 +49,7 @@
       }
     </style>
 
-    <link href="./css/home.css" rel="stylesheet"/>
+    <link href="./css/home.css" rel="stylesheet" />
     <link
       as="image"
       href="./assets/img/icon-checkbox-check.svg"
@@ -87,7 +87,7 @@
           <h1>Contact Us</h1>
         </header>
 
-        <form action="/" class="form" id="contactForm" method="post">
+        <form action="/submit" class="form" id="contactForm" method="post">
           <div class="form__fullname">
             <div class="form__name">
               <label class="form__name-label" for="first_name"
@@ -139,11 +139,11 @@
           <div class="form__checkboxes">
             <div class="form__checkboxes--type">
               <input
-                      class="form__checkboxes--type-input"
+                class="form__checkboxes--type-input"
                 id="general"
                 name="general"
+                required
                 type="checkbox"
-                      required
               />
               <label class="form__checkboxes--type-label" for="general"
                 >General Enquiry</label
@@ -152,11 +152,11 @@
 
             <div class="form__checkboxes--type">
               <input
-                      class="form__checkboxes--type-input"
+                class="form__checkboxes--type-input"
                 id="support"
                 name="support"
+                required
                 type="checkbox"
-                      required
               />
               <label class="form__checkboxes--type-label" for="support"
                 >Support Request</label
