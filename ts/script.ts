@@ -27,7 +27,7 @@
   });
 
   form.addEventListener("submit", (e: SubmitEvent): void => {
-    // e.preventDefault();
+    e.preventDefault();
     if (form.checkValidity()) {
       modal.classList.remove("hide");
     }

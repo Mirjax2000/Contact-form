@@ -1,8 +1,17 @@
 """FastAPI"""
 
 from fastapi import FastAPI, Form
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 app: FastAPI = FastAPI()
+# Mount pro statické soubory: obrázky v adresáři "assets"
+app.mount("/", StaticFiles(directory=".", html=True), name="root")
+
+
+@app.get("/")
+async def root():
+    return FileResponse("./index.html")
 
 
 @app.post("/submit-form")
