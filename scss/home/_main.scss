@@ -14,6 +14,11 @@
   @extend %position-relative;
 }
 
+.hide {
+  display: none;
+}
+
+// --- modal ---
 .modal {
   @extend %position-absolute;
   @extend %width-full;
@@ -71,9 +76,9 @@ span {
   }
 }
 
-// form
+// --- form ---
 .form {
-  margin-top: percentage(16 / 1089);
+  margin-top: 1em;
 
   &__text {
     @extend %weight-400;
@@ -131,51 +136,54 @@ span {
   }
 
   &__checkboxes {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    @include flex(center, stretch);
+
     flex-direction: column;
     gap: 1em;
-  }
 
-  &__checkbox--type {
-    @extend %border-7;
-    @extend %border-1px;
-    @extend %flex-start;
-    @extend %no-selection;
-    @extend %trans-border;
-
-    padding: 1em;
-
-    &:has(&-input:checked) {
-      background-color: $clr11;
+    &:has(&--type-input:user-invalid) + .form__error {
+      @extend %color-red;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-      @extend %border-lightgreen;
-    }
+    &--type {
+      @extend %border-7;
+      @extend %border-1px;
+      @extend %flex-start;
+      @extend %no-selection;
+      @extend %trans-border;
 
-    &-label {
-      @extend %checkbox-label;
-      @extend %font-size-label;
-    }
+      padding: 1em;
 
-    &-input {
-      @extend %cursor-pointer;
+      &:has(&-input:checked) {
+        background-color: $clr11;
+      }
 
-      border-radius: 50%;
-      appearance: none;
-      border: rgb(88 88 88 / 40%) 2px solid;
-      width: 1.5em;
-      height: 1.5em;
+      &:hover,
+      &:focus,
+      &:active {
+        @extend %border-lightgreen;
+      }
 
-      &:checked {
-        @extend %bck-img;
-        @extend %border-none;
+      &-label {
+        @extend %checkbox-label;
+        @extend %font-size-label;
+      }
 
-        background-image: url("#{$img-path}/icon-radio-selected.svg");
+      &-input {
+        @extend %cursor-pointer;
+
+        border-radius: 50%;
+        appearance: none;
+        border: rgb(88 88 88 / 40%) 2px solid;
+        width: 1.5em;
+        height: 1.5em;
+
+        &:checked {
+          @extend %bck-img;
+          @extend %border-none;
+
+          background-image: url("#{$img-path}/icon-radio-selected.svg");
+        }
       }
     }
   }
