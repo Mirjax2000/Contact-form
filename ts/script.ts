@@ -26,10 +26,11 @@
     });
   });
 
-  form.addEventListener("submit", (e: SubmitEvent): void => {
+  form.addEventListener("submit", async (e: SubmitEvent): Promise<void> => {
     e.preventDefault();
     if (form.checkValidity()) {
       modal.classList.remove("hide");
+      const formData = new FormData(e.target);
     }
   });
 })();
