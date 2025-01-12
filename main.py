@@ -28,7 +28,7 @@ async def root():
 @app.post("/submit-form")
 async def submit_form(data: FormData) -> dict:
     print(data)
-    form_content: dict[str, str] = {
+    form_content: dict = {
         "first_name": data.first_name,
         "last_name": data.last_name,
         "email_address": data.email_address,
