@@ -2,19 +2,18 @@
   const form = document.getElementById("contactForm") as HTMLFormElement;
   const modal = document.getElementById("modal") as HTMLDivElement;
 
-  const general: Element = form.querySelector("#general") as HTMLInputElement;
-  const support: Element = form.querySelector("#support") as HTMLInputElement;
+  const general: HTMLInputElement = form.querySelector("#general") as HTMLInputElement;
+  const support: HTMLInputElement = form.querySelector("#support") as HTMLInputElement;
 
-  const checkboxesArray: Element[] = [general, support];
+  const checkboxesArray: HTMLInputElement[] = [general, support];
 
-  checkboxesArray.forEach((checkbox: Element): void => {
+  checkboxesArray.forEach((checkbox: HTMLInputElement): void => {
     checkbox.addEventListener("click", (e: Event): void => {
       const current = e.target as HTMLInputElement;
       if (current.checked) {
         checkboxesArray.forEach((box: Element): void => {
-          box.removeAttribute("required");
-          // @ts-ignore
-          box.checked = false;
+          (box as HTMLInputElement).removeAttribute("required");
+          (box as HTMLInputElement).checked = false;
           current.checked = true;
           current.setAttribute("required", "");
         });
@@ -30,7 +29,16 @@
     e.preventDefault();
     if (form.checkValidity()) {
       modal.classList.remove("hide");
-      const formData = new FormData(e.target);
-    }
+      const formData = new FormData(form);
+      const response = await fetch("/submit-form", {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(formData)),
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      });
+      const result = await response.json();
+      console.log(result);
+  };
   });
 })();

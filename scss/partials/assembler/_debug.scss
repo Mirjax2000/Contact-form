@@ -4,11 +4,15 @@
 //   --- Debug ---
 // -----------------
 
-@if ($debug) {
+@if $debug {
     * {
         outline: 2px solid red
     }
 
+    th {
+        border: 2px solid red;
+    }
+    
     div:empty,
     span:empty,
     li:empty,
@@ -52,10 +56,6 @@
 
     table[summary=""] {
         outline: 3px dotted red;
-    }
-
-    th {
-        border: 2px solid red;
     }
 
     th[scope="col"],

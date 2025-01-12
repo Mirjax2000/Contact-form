@@ -1,12 +1,20 @@
 """FastAPI"""
 
+from typing import Optional
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+app: FastAPI = FastAPI()
+app.mount("/js", StaticFiles(directory="./js"), name="js")
+app.mount("/css", StaticFiles(directory="./css"), name="css")
+app.mount("/assets", StaticFiles(directory="./assets"), name="assets")
+
 
 class FormData(BaseModel):
+    """Form data model"""
+
     first_name: str
     last_name: str
     email_address: str
@@ -16,19 +24,16 @@ class FormData(BaseModel):
     consent: str
 
 
-app: FastAPI = FastAPI()
-app.mount("/", StaticFiles(directory=".", html=True), name="root")
-
-
 @app.get("/")
 async def root():
+    """Root endpoint"""
     return FileResponse("./index.html")
 
 
 @app.post("/submit-form")
 async def submit_form(data: FormData) -> dict:
-    print(data)
-    form_content: dict = {
+    """Submit form endpoint"""
+    form_content = {
         "first_name": data.first_name,
         "last_name": data.last_name,
         "email_address": data.email_address,
@@ -37,6 +42,6 @@ async def submit_form(data: FormData) -> dict:
         "message": data.message,
         "consent": data.consent,
     }
-    for item in form_content:
-        print(form_content[item])
+    for key, value in form_content.items():
+        print(key, value)
     return form_content

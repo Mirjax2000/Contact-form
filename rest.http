@@ -1,0 +1,12 @@
+POST http://127.0.0.1:8000/submit-form HTTP/1.1
+Content-Type: application/json
+
+{
+    "first_name": "John",
+    "last_name": "Doe",
+    "email_address": "john.doe@example.com",
+    "general": "General inquiry",
+    "support": "Technical support",
+    "message": "Hello, I need help with...",
+    "consent": "Yes"
+}
