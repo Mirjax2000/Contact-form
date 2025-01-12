@@ -19,7 +19,7 @@
           current.setAttribute("required", "");
         });
       } else {
-        checkboxesArray.forEach((box: Element): void => {
+        checkboxesArray.forEach((box): void => {
           box.setAttribute("required", "");
         });
       }
